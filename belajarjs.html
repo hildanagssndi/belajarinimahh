@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Dengan Objek Form</title>
+    <script language="JavaScript">
+        function tekanText(form) {
+            var namastr = form.nama.value;
+            var alamatstr = form.alamat.value;
+            form.onama.value = namastr;
+            form.oalamat.value = alamatstr;
+        }
+
+        function radioBox(form) {
+            var ket = "";
+            if (form.gender.value === "wanita") {
+                ket = "Wanita";
+            } else if (form.gender.value === "pria") {
+                ket = "Pria";
+            } else {
+                ket = "tidak terpilih";
+            }
+            alert('Anda adalah seorang ' + ket);
+        }
+
+        function checkHobby(form) {
+            var ket = "";
+            var ket1 = "";
+            if (form.bola.checked) {
+                ket = "Nonton Bola";
+            }
+            if (form.tv.checked) {
+                ket1 = "Nonton TV";
+            }
+            alert('Hobby anda ' + ket + ' ' + ket1);
+        }
+
+        function tekanTextArea(form) {
+            var ketstr = form.Ket.value;
+            form.Oket.value = ketstr;
+        }
+
+        function tekanSelect(form) {
+            var jurusanstr = form.Jurusan.value;
+            form.Ojurusan.value = jurusanstr;
+        }
+    </script>
+</head>
+<body>
+    <h3>Latihan Object Text, Object Radio, Object Checkbox, Object Textarea, Object Select</h3>
+    <p>
+    <form name="fformText">
+        <h1>Memasukkan Data Dengan Objek Teks</h1><hr>
+        <pre>
+        Nama Anda : <input type="text" size="11" name="nama">
+        Alamat : <input type="text" size="25" name="alamat">
+        </pre>
+        <br>
+        <input type="button" value="kirim" onclick="tekanText(this.form)">
+        <input type="reset" value="ulang">
+        <h3>Output</h3>
+        <pre>
+        Jadi Nama Anda adalah :<input type="text" size="11" name="onama">
+        Alamat Anda di :<input type="text" size="25" name="oalamat">
+        </pre>
+    </form>
+
+    <form>
+        <h1>Memasukkan Data Dengan Objek Radio</h1><hr>
+        <p><input type="radio" name="gender" value="wanita">Wanita</p>
+        <p><input type="radio" name="gender" value="pria">Pria</p>
+        <hr>
+        <p>
+            <input type="button" value="CONFIRM" onclick="radioBox(this.form)">
+            <input type="reset" value="RESET">
+        </p>
+    </form>
+
+    <form>
+        <h1>Memasukkan Data Dengan Objek Checkbox</h1><hr>
+        <p>Hobby anda:
+        <input type="checkbox" name="bola">Nonton Sepak Bola
+        <input type="checkbox" name="tv">Nonton televisi</p>
+        <hr>
+        <p>
+            <input type="button" value="CONFIRM" onclick="checkHobby(this.form)">
+            <input type="reset" value="RESET">
+        </p>
+    </form>
+
+    <form name="fformTextArea">
+        <h1>Memasukkan Data Dengan Objek TextArea</h1><hr>
+        <h3>Keterangan :</h3><br>
+        <textarea name="Ket" rows="3" cols="30"></textarea>
+        <br><br>
+        <input type="button" value="kirim" onclick="tekanTextArea(this.form)">
+        <input type="reset" value="ulang">
+        <h3>Output Keterangan :</h3>
+        <textarea name="Oket" rows="3" cols="30"></textarea>
+    </form>
+
+    <form name="fformSelect">
+        <h1>Penggunaan Objek Select</h1><hr>
+        <h3>Masukan :</h3>
+        Jurusan Di UNIKOM:
+        <select name="Jurusan" size="1">
+            <option value="Teknik Informatika">Teknik Informatika</option>
+            <option value="Manajemen Informatika">Manajemen Informatika</option>
+            <option value="Teknik Komputer">Teknik Komputer</option>
+            <option value="Teknik Industri">Teknik Industri</option>
+            <option value="Teknik Elektro">Teknik Elektro</option>
+            <option value="Teknik Sipil">Teknik Sipil</option>
+            <option value="Teknik Arsitektur">Teknik Arsitektur</option>
+            <option value="Perencanaan Wil. Kota">Perencanaan Wil. Kota</option>
+        </select>
+        <p>
+            <input type="button" value="kirim" onclick="tekanSelect(this.form)">
+            <input type="reset" value="ulang">
+        </p>
+        <h3>Output jurusan :</h3>
+        <input type="text" name="Ojurusan" size="30">
+    </form>
+</body>
+</html>
